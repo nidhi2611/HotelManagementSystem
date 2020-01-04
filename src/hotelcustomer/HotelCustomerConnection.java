@@ -5,38 +5,26 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class HotelCustomerConnection {
-    public String database = "jdbc:mysql://localhost:3306";
-    public String username = "root";
-    public String password = "";
+    private static final String database = "jdbc:mysql://localhost:3306/test?useTimezone=true&serverTimezone=UTC";
+    private static final String username = "root";
+    private static final String password = "";
     public Connection connection = null;
 
     public Connection getConnection() {
         return connection;
     }
 
-    public boolean attemptConnection() {          //to establish connection
-        boolean isConnected = false;              // variable for status of connection
-        try {
-            connection = DriverManager.getConnection(database, username, password);//establish connection
-            if (connection != null)
-                isConnected = true;      // if connection is established change status to true
-        } catch (SQLException e) {
-            System.out.println("SQL Exception occured.."); //if not give error message
-        }
-        return isConnected;    //return the status of connection
+    public Connection attemptConnection() throws SQLException {          //to establish connection
+
+
+        connection = DriverManager.getConnection(database, username, password);//establish connection
+        return connection;    //return the status of connection
     }
 
-    public boolean closeConnection() {     //to close the connection
-        boolean isCloseConnection = false;   // status of connection closing
-        if (getConnection() != null) {
-            try {
-                getConnection().close();  //attempt to close connection
-                isCloseConnection = true;
-            } catch (SQLException e) {
-                System.out.println("SQL EXCEPTION OCCURED...");
-            }
-        }
-        return isCloseConnection;  //returning connection status
+    public Connection closeConnection() throws SQLException {     //to close the connection
+
+        getConnection().close();  //attempt to close connection
+        return connection;  //returning connection status
     }
 }
 
