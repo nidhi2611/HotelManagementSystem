@@ -38,4 +38,5 @@ public class HotelCustomerConnection {
         }
         return isCloseConnection;  //returning connection status
     }
+}
 
