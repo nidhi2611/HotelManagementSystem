@@ -3,14 +3,14 @@ package hotelcustomer;
 public class Customer {
     private int customerId;
     private String customerName;
-    private int addharNumber;
+    private String addharNumber;
     private int customerRoomNo;
-    private long customerContact;
+    private String customerContact;
     private String checkIn;
     private String checkOut;
     private double amount;
 
-    public Customer(int cid, String n, int an, int rn, long c, String cin, String cout, double amt) {
+    public Customer(int cid, String n, String an, int rn, String c, String cin, String cout, double amt) {
         customerId = cid;
         customerName = n;
         addharNumber = an;
@@ -47,11 +47,11 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public int getAddharNumber() {
+    public String getAddharNumber() {
         return addharNumber;
     }
 
-    public void setAddharNumber(int addharNumber) {
+    public void setAddharNumber(String addharNumber) {
         this.addharNumber = addharNumber;
     }
 
@@ -63,11 +63,11 @@ public class Customer {
         this.customerRoomNo = customerRoomNo;
     }
 
-    public long getCustomerContact() {
+    public String getCustomerContact() {
         return customerContact;
     }
 
-    public void setCustomerContact(long customerContact) {
+    public void setCustomerContact(String customerContact) {
         this.customerContact = customerContact;
     }
 
