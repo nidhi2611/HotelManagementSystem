@@ -20,7 +20,7 @@ public class CustomerEntry {
         preparedStatement.setString(6, customer.getCheckIn());
         preparedStatement.setString(7, customer.getCheckOut());
         preparedStatement.setDouble(8, customer.getAmount());
-
+        isCreated = preparedStatement.executeUpdate() >= 1;
     }
 
     public void isCreationSuccessful() {
