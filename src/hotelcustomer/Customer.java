@@ -23,12 +23,12 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Name of the customer" + customerName +
-                "CustomerID" + customerId +
-                "Addhar Number" + addharNumber +
-                "Customer room no" + customerRoomNo +
-                "check out date" + checkOut +
-                "amount to be paid" + amount;
+        return "Name of the customer  " + customerName +
+                "CustomerID  " + customerId +
+                "Addhar Number  " + addharNumber +
+                "Customer room no  " + customerRoomNo +
+                "check out date  " + checkOut +
+                "amount to be paid  " + amount;
     }
 
     public int getCustomerId() {

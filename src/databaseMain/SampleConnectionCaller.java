@@ -16,8 +16,9 @@ public class SampleConnectionCaller {
         } else
             System.out.println("CONNECTION TO DATABASE FAILED AT STEP 1");
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter 1 for new customer entry");
+        System.out.println("Enter 1 for new customer entry");
         System.out.println("Enter 2 for viewing the whole customer table");
+        System.out.println("Enter 3 for searching a customer");
         int choiceOfOperation = sc.nextInt();
         switch (choiceOfOperation) {
             case 1:
@@ -38,6 +39,11 @@ public class SampleConnectionCaller {
             case 2:
                 CustomerView customerView = new CustomerView();
                 customerView.printCurrentCustomerTable(customerView.getAllEnteriesFromCustomer(hotelCustomerConnection.getConnection()));
+                break;
+            case 3:
+                CustomerView customerView1 = new CustomerView();
+                customerView1.printCurrentCustomerTable(customerView1.searchForCustomer(hotelCustomerConnection.getConnection()));
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choiceOfOperation);
         }
