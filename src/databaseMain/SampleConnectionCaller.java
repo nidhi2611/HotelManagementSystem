@@ -2,6 +2,7 @@ package databaseMain;
 
 import hotelcustomer.Customer;
 import hotelcustomer.CustomerEntry;
+import hotelcustomer.CustomerView;
 import hotelcustomer.HotelCustomerConnection;
 
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ public class SampleConnectionCaller {
             System.out.println("CONNECTION TO DATABASE FAILED AT STEP 1");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter 1 for new customer entry");
+        System.out.println("Enter 2 for viewing the whole customer table");
         int choiceOfOperation = sc.nextInt();
         switch (choiceOfOperation) {
             case 1:
@@ -33,6 +35,9 @@ public class SampleConnectionCaller {
                 customerEntry.isCreationSuccessful();
 
                 break;
+            case 2:
+                CustomerView customerView = new CustomerView();
+                customerView.printCurrentCustomerTable(customerView.getAllEnteriesFromCustomer(hotelCustomerConnection.getConnection()));
             default:
                 throw new IllegalStateException("Unexpected value: " + choiceOfOperation);
         }
